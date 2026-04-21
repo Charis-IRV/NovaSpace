@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 40 95% 45%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 40 95% 45%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 40 95% 45%;
+
+    --radius: 0.75rem;
+
+    --gold: 40 95% 45%;
+    --gold-light: 40 90% 55%;
+    --gold-dark: 40 100% 35%;
+
+    --surface-elevated: 0 0% 8%;
+    --surface-overlay: 0 0% 10%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(40, 95%, 45%), hsl(40, 90%, 55%));
+    --gradient-dark: linear-gradient(180deg, hsl(0, 0%, 0%), hsl(0, 0%, 4%));
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 8%), hsl(0, 0%, 5%));
+
+    --shadow-gold: 0 0 30px -5px hsl(40 95% 45% / 0.3);
+    --shadow-card: 0 4px 30px -10px hsl(0 0% 0% / 0.5);
+    --shadow-elevated: 0 8px 40px -12px hsl(0 0% 0% / 0.6);
+
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 40 95% 45%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 40 95% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-20 xl:px-32;
+  }
+
+  .section-spacing {
+    @apply py-10 md:py-14 lg:py-16;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .bg-gradient-gold {
+    background-image: var(--gradient-gold);
+  }
+
+  .card-premium {
+    @apply rounded-2xl border border-border bg-card p-8;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-premium-hover {
+    @apply card-premium transition-all duration-500;
+  }
+
+  .card-premium-hover:hover {
+    @apply border-primary/30;
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-4px);
+  }
+
+  .glow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .line-accent {
+    @apply h-px w-16 bg-gradient-gold;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
